@@ -11,4 +11,4 @@ Key Features:
  - Live Play Against Other Players
 
 Images:
-https://github.com/gabesnow99/startup/blob/main/IMG_7677.jpg
+![alt text](https://github.com/gabesnow99/startup/blob/main/IMG_7677.jpg?raw=true)
