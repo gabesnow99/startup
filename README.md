@@ -1,10 +1,8 @@
 # startup
-This is the actual startup project.
 
 SUPER PONG!
 
-Elevator Pitch:
-The idea is to recreate one of the most classic games of all time: Pong! This version will have an added twist: There will be the classic single person mode, but there will be the option to play with two people, locally or from different devices.
+Have you ever wanted to play a classic old game with friends, but don't want to share a screen? Welcome to Super Pong! The idea is to recreate one of the most classic games of all time, but with an added twist: This Pong will have the classic single person mode, but also an option to play with two people, locally or from different devices.
 
 Key Features:
  - Login to Save Progress
