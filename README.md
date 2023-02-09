@@ -14,3 +14,6 @@ Key Features:
 
 Images:
 ![alt text](https://github.com/gabesnow99/startup/blob/main/IMG_7677.jpg?raw=true)
+
+Simon Project Notes:
+This project is interesting. It is relatively simple. The biggest challenge I think is connecting input and outputs.
