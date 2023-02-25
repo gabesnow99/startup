@@ -41,7 +41,10 @@ body {
 
 .second-form {
   text-align: center;
-  /* padding: 20px; */
+}
+
+.pad-top {
+  margin-top: 20px;
 }
 
 .login-screen {
@@ -105,4 +108,17 @@ input:focus {
   color: #444;
   display: block;
   margin-top: 12px;
+}
+
+.pong-board {
+  background-color: #FFF;
+  width: 90vw;
+  height: 40vw;
+}
+
+.logo {
+  text-align: center;
+  font-size: 60px;
+  font-weight: bolder;
+  color: #FFF;
 }
