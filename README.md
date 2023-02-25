@@ -19,3 +19,7 @@ Images:
 Simon Project Notes:
 - From HTML: This project is interesting. It is relatively simple. The biggest challenge I think is connecting input and outputs. Other than that, it seems like HTML is a matter of simply knowing which building blocks to use and making a correct use of them.
 - From CSS: I wondered where the heck the different styles were coming from until I followed the link that's put into the 'head' section. I realized that all of the possible formats are defined very compactly in the file. They are then imported like a package. Also, placing the link there allows the rest of the file to call the different fonts, alignments, etc. Finally, I realized that the "class=" section can include multiple components so some features can be shared and others not between elements.
+
+Other HTML and CSS Notes:
+- HTML is purely structure. One of the most useful blocks is "div" in my opinion. It's seems very versitile.
+- CSS is all about styling. The big connection between the two sets of code is in class="". The outside class will default to share their settings with their children. The inside classes can override these.
