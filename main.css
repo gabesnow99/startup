@@ -6,6 +6,14 @@
   outline: none;
 }
 
+.make-it-blue {
+  background-color: #3498DB;
+}
+
+.white-noise {
+  background-color: #FFF;
+}
+
 body {
   font-family: Arial;
   background-color: #3498DB;
@@ -15,6 +23,25 @@ body {
 .login {
   margin: 20px auto;
   width: 300px;
+}
+
+.second {
+  margin: 20px auto;
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10%;
+}
+
+.second-screen {
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 5px
+}
+
+.second-form {
+  text-align: center;
+  /* padding: 20px; */
 }
 
 .login-screen {
