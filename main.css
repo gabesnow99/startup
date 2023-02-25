@@ -43,6 +43,24 @@ body {
   text-align: center;
 }
 
+.settings {
+  margin: 20px auto;
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10%;
+}
+
+.settings-screen {
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 5px
+}
+
+.settings-form {
+  text-align: center;
+}
+
 .pad-top {
   margin-top: 20px;
 }
@@ -114,6 +132,23 @@ input:focus {
   background-color: #FFF;
   width: 90vw;
   height: 40vw;
+}
+
+.centered-row {
+  text-align: center;
+  margin: auto;
+}
+
+.right-button {
+  background-color: #FFF;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.left-button {
+  background-color: #FFF;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 .logo {
