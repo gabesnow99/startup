@@ -23,3 +23,7 @@ Simon Project Notes:
 Other HTML and CSS Notes:
 - HTML is purely structure. One of the most useful blocks is "div" in my opinion. It's seems very versitile.
 - CSS is all about styling. The big connection between the two sets of code is in class="". The outside class will default to share their settings with their children. The inside classes can override these.
+
+JS Notes:
+- It is very important to link the files using script. Sometimes this comes after the HTML code.
+- Things can be saved locally, which is very important for things like scores.
