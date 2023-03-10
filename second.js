@@ -3,5 +3,13 @@ function getPlayerName() {
 }
 
 function setSinglePlayer() {
-    
+    localStorage.setItem('mode', 'single');
+}
+
+function setTwoPlayer() {
+    localStorage.setItem('mode', 'double');
+}
+
+function setOnline() {
+    localStorage.setItem('mode', 'online');
 }

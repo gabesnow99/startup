@@ -10,6 +10,7 @@
         />
         <title>Pong</title>
         <link rel="icon" href="favicon.ico">
+        <script src="second.js"></script>
     </head>
 
     <body class="make-it-blue">
@@ -23,19 +24,18 @@
         <div class="second">
             <div class="second-screen white-noise">
                 <div class="second-form">
-                    <a class="btn btn-primary btn-large btn-block" href="play.html">Single Player</a>
+                    <a class="btn btn-primary btn-large btn-block" onclick="setSinglePlayer()" href="play.html">Single Player</a>
                 </div>
                 <div class="second-form pad-top">
-                    <a class="btn btn-primary btn-large btn-block" href="play.html">Two Player</a>
+                    <a class="btn btn-primary btn-large btn-block" onclick="setTwoPlayer()" href="play.html">Two Player</a>
                 </div>
                 <div class="second-form pad-top">
-                    <a class="btn btn-primary btn-large btn-block" href="play.html">Online</a>
+                    <a class="btn btn-primary btn-large btn-block" onclick="setOnline()" href="play.html">Online</a>
                 </div>
-                <div class="second-form pad-top">
+                <!-- <div class="second-form pad-top">
                     <a class="btn btn-primary btn-large btn-block" href="play.html">Test</a>
-                </div>
+                </div> -->
             </div>
         </div>
-        <script src="second.js"></script>
     </body>
 </html>
