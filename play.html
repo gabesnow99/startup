@@ -14,7 +14,7 @@
 
     <body class="make-it-blue">
         <header>
-            <div class="logo">
+            <div id="play-logo" class="logo">
                 SUPER PONG
             </div>
             <div class="centered-row">
@@ -30,7 +30,11 @@
                 </table>
             </div>
         </header>
-        <canvas class="pong-board">
-        </canvas>
+        <div class="pong-board">
+            <div class="bar left-bar"></div>
+            <div class="bar right-bar"></div>
+            <div class="ball"></div>
+        </div>
+        <script src="play.js"></script>
     </body>
 </html>

@@ -11,10 +11,11 @@
 }
 
 .white-noise {
-  background-color: #FFF;
+  background-color: #FFFFFF;
 }
 
 body {
+  text-align: center;
   font-family: Arial;
   background-color: #3498DB;
   padding: 50px;
@@ -128,12 +129,6 @@ input:focus {
   margin-top: 12px;
 }
 
-.pong-board {
-  background-color: #FFF;
-  width: 90vw;
-  height: 40vw;
-}
-
 .centered-row {
   text-align: center;
   margin: auto;
@@ -156,4 +151,37 @@ input:focus {
   font-size: 60px;
   font-weight: bolder;
   color: #FFF;
+}
+
+.pong-board {
+  background-color: #FFF;
+  width: 90vw;
+  height: 40vw;
+  padding: 2vw;
+  display: inline-block;
+  /* transform: translateY(200px); */
+}
+
+.bar {
+  background: #000000;
+  width: 1.5vw;
+  height: 10vw;
+}
+
+.left-bar {
+  float: left;
+}
+
+.right-bar {
+  float: right;
+}
+
+.ball {
+  background: #990101;
+  width: 2vw;
+  height: 2vw;
+  position: relative;
+  top: 20vw;
+  left: 40vw;
+  border-radius: 100%;
 }
