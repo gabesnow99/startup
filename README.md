@@ -27,3 +27,4 @@ Other HTML and CSS Notes:
 JS Notes:
 - It is very important to link the files using script. Sometimes this comes after the HTML code.
 - Things can be saved locally, which is very important for things like scores.
+- Async/Await is acually pretty useful for this project.

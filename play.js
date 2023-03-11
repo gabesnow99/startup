@@ -17,30 +17,16 @@ function addListeners() {
 
     const mode = getPlayerMode();
 
-    // ADD LISTENERS FOR UP AND DOWN ARROWS
-    document.addEventListener('keydown', function(key) {
-        // document.getElementById("play-logo").innerHTML = key.code;
-        if (key.code === "ArrowUp") {
-            moveLeftyUp();
-        } else if (key.code === "ArrowDown") {
-            moveLeftyDown();
-        }
-    });
-    // WHEN KEYS ARE LET GO
-    document.addEventListener('keyup', function(key) {
-        if (key.code === "ArrowUp") {
-            stopLefty();
-        } else if (key.code === "ArrowDown") {
-            stopLefty();
-        }
-    })
-
     // ONLY FOR TWO-PLAYER
     if (mode === "double") {
         document.addEventListener('keydown', function(key) {
             if (key.code === "KeyW") {
-                moveRightyUp();
+                moveLeftyUp();
             } else if (key.code === "KeyS") {
+                moveLeftyDown();
+            } else if (key.code === "ArrowUp") {
+                moveRightyUp();
+            } else if (key.code === "ArrowDown") {
                 moveRightyDown();
             }
         });
@@ -50,6 +36,28 @@ function addListeners() {
                 stopRighty();
             } else if (key.code === "KeyS") {
                 stopRighty();
+            }
+        })
+    } else {//if (mode === "single") {
+        // ADD LISTENERS FOR UP AND DOWN ARROWS
+        document.addEventListener('keydown', function(key) {
+            // document.getElementById("play-logo").innerHTML = key.code;
+            if (key.code === "ArrowUp") {
+                moveLeftyUp();
+            } else if (key.code === "ArrowDown") {
+                moveLeftyDown();
+            } else if (key.code === "KeyW") {
+                moveLeftyUp();
+            } else if (key.code === "KeyS") {
+                moveLeftyDown();
+            }
+        });
+        // WHEN KEYS ARE LET GO
+        document.addEventListener('keyup', function(key) {
+            if (key.code === "ArrowUp") {
+                stopLefty();
+            } else if (key.code === "ArrowDown") {
+                stopLefty();
             }
         })
     }
@@ -177,7 +185,7 @@ function playBall(ballObj) {
         }
     }
 
-    if (xNewPos === 2) {
+    if (xNewPos === 1) {
         let bar = document.getElementById("left-bar");
         let top = bar.style.top.slice(0, -2);
         let bottom = Number(top) + 10;
