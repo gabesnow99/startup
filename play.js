@@ -130,5 +130,57 @@ function stopRighty() {
     // document.getElementById("play-logo").innerHTML = "STOP RIGHTY";
 }
 
+function startBall() {
+
+    let ball = document.getElementById("ball");
+    ball.style.top = "20vw";
+    ball.style.top = "40vw";
+
+    let ballObj = {
+        xPos: 20,
+        yPos: 40,
+        xDir: 1,
+        yDir: 1,
+        inPlay: true,
+    };
+
+    return ballObj;
+}
+
+function playBall(ballObj) {
+
+    if (ballObj.yPos <= 0) {
+        ballObj.yDir = 1;
+    } else if (ballObj.yPos >= 40) {
+        ballObj.yDir = -1;
+    }
+
+    if (ballObj.xPos > 90) {
+        ballObj.inPlay = false;
+    }
+
+    let xNewPos = ballObj.xPos + ballObj.xDir;
+    let yNewPos = ballObj.yPos + ballObj.yDir;
+
+    xNewPos += "vw";
+    yNewPos += "vw";
+
+    ball.style.top = xNewPos;
+    ball.style.top = yNewPos;
+
+    return ballObj;
+}
+
+function play() {
+    let ballObj = startBall();
+    for (let i = 0; i < 1; i++) {
+        ballObj = playBall(ballObj);
+    }
+    // while (ballObj.inPlay === true) {
+    //     ballObj = playBall(ballObj);
+    // }
+}
+
 init();
 addListeners();
+play();
