@@ -216,25 +216,38 @@ function playBall(ballObj) {
     return ballObj;
 }
 
+function updateComputer(ballObj) {
+    let bar = document.getElementById("left-bar");
+    let top = bar.style.top.slice(0, -2);
+    let bottom = Number(top) - 10;
+    document.getElementById("play-logo").innerHTML = top;
+    if (top > 10) {
+        moveRightyUp();
+    }
+    // if (ballObj.yPos > top) {
+        // moveRightyDown();
+    // } else if (ballObj.yPos < bottom) {
+    //     moveRightyUp();
+    // }
+}
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function play() {
     let ballObj = startBall();
-    document.getElementById("play-logo").innerHTML = ballObj.xPos;
+    // document.getElementById("play-logo").innerHTML = ballObj.xPos;
     let i = 0;
-    // for (i = 0; i < 50; i++) {
-    //     await sleep(100);
-    //     ballObj = playBall(ballObj);
-    //     document.getElementById("play-logo").innerHTML = i;
-    // }
     while (ballObj.inPlay === true) {
-        ballObj = playBall(ballObj);
+        // ballObj = playBall(ballObj);
         await sleep(100);
         ballObj = playBall(ballObj);
         // document.getElementById("play-logo").innerHTML = ballObj.xPos;
-        i++;
+        // i++;
+        if (getPlayerMode() === "single") {
+            updateComputer(ballObj);
+        }
     }
 }
 
