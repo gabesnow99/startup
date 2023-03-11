@@ -147,7 +147,7 @@ function startBall() {
     let ballObj = {
         xPos: 42,
         yPos: 20,
-        xDir: 1,
+        xDir: -1,
         yDir: 1,
         inPlay: true,
     };
