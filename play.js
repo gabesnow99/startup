@@ -220,7 +220,7 @@ function updateComputer(ballObj) {
     let bar = document.getElementById("left-bar");
     let top = bar.style.top.slice(0, -2);
     let bottom = Number(top) - 10;
-    document.getElementById("play-logo").innerHTML = top;
+    // document.getElementById("play-logo").innerHTML = top;
     if (top > 10) {
         moveRightyUp();
     }
