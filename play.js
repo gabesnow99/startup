@@ -1,3 +1,10 @@
+function init() {
+    let leftBar = document.getElementById("left-bar");
+    let rightBar = document.getElementById("right-bar");
+    leftBar.style.top = "15vw";
+    rightBar.style.top = "15vw";
+}
+
 function getPlayerMode() {
     return localStorage.getItem('mode') ?? 'single';
 }
@@ -50,23 +57,51 @@ function addListeners() {
 }
 
 function moveLeftyUp() {
-    document.getElementById("play-logo").innerHTML = "MOVING LEFT UP";
+    // document.getElementById("play-logo").innerHTML = "MOVING LEFT UP";
+    let bar = document.getElementById("left-bar");
+    if (bar.style.top === "") {
+        bar.style.top = "15vw";
+    }
+    
+    let newPos = bar.style.top.slice(0, -2) - 1.0;
+    if (newPos < 0) {
+        newPos = 0;
+    }
+    newPos += "vw";
+
+    bar.style.top = newPos;
+    // document.getElementById("play-logo").innerHTML = newPos;
+}
+
+function moveLeftyDown() {
+    // document.getElementById("play-logo").innerHTML = "MOVING LEFT DOWN";
+    let bar = document.getElementById("left-bar");
+    if (bar.style.top === "") {
+        bar.style.top = "15vw";
+    }
+
+    let newPos = Number(bar.style.top.slice(0, -2));
+    newPos += 1;
+    if (newPos > 30) {
+        newPos = 30;
+    }
+    newPos += "vw";
+    // newPos = "20vw";
+
+    bar.style.top = newPos;
+    // document.getElementById("play-logo").innerHTML = newPos;
+}
+
+function stopLefty() {
+    // document.getElementById("play-logo").innerHTML = "STOP LEFTY";
 }
 
 function moveRightyUp() {
     document.getElementById("play-logo").innerHTML = "MOVING RIGHT UP";
 }
 
-function moveLeftyDown() {
-    document.getElementById("play-logo").innerHTML = "MOVING LEFT DOWN";
-}
-
 function moveRightyDown() {
     document.getElementById("play-logo").innerHTML = "MOVING RIGHT DOWN";
-}
-
-function stopLefty() {
-    document.getElementById("play-logo").innerHTML = "STOP LEFTY";
 }
 
 function stopRighty() {

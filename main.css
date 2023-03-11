@@ -157,7 +157,8 @@ input:focus {
   background-color: #FFF;
   width: 90vw;
   height: 40vw;
-  padding: 2vw;
+  padding-left: 2vw;
+  padding-right:2vw;
   display: inline-block;
   /* transform: translateY(200px); */
 }
@@ -170,10 +171,14 @@ input:focus {
 
 .left-bar {
   float: left;
+  position: relative;
+  top: 15vw;
 }
 
 .right-bar {
   float: right;
+  position: relative;
+  top: 15vw;
 }
 
 .ball {
