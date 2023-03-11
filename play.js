@@ -86,7 +86,6 @@ function moveLeftyDown() {
         newPos = 30;
     }
     newPos += "vw";
-    // newPos = "20vw";
 
     bar.style.top = newPos;
     // document.getElementById("play-logo").innerHTML = newPos;
@@ -97,15 +96,39 @@ function stopLefty() {
 }
 
 function moveRightyUp() {
-    document.getElementById("play-logo").innerHTML = "MOVING RIGHT UP";
+    let bar = document.getElementById("right-bar");
+    if (bar.style.top === "") {
+        bar.style.top = "15vw";
+    }
+    
+    let newPos = bar.style.top.slice(0, -2) - 1.0;
+    if (newPos < 0) {
+        newPos = 0;
+    }
+    newPos += "vw";
+
+    bar.style.top = newPos;
 }
 
 function moveRightyDown() {
-    document.getElementById("play-logo").innerHTML = "MOVING RIGHT DOWN";
+    let bar = document.getElementById("right-bar");
+    if (bar.style.top === "") {
+        bar.style.top = "15vw";
+    }
+
+    let newPos = Number(bar.style.top.slice(0, -2));
+    newPos += 1;
+    if (newPos > 30) {
+        newPos = 30;
+    }
+    newPos += "vw";
+
+    bar.style.top = newPos;
 }
 
 function stopRighty() {
-    document.getElementById("play-logo").innerHTML = "STOP RIGHTY";
+    // document.getElementById("play-logo").innerHTML = "STOP RIGHTY";
 }
 
+init();
 addListeners();
