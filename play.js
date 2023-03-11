@@ -134,11 +134,11 @@ function startBall() {
 
     let ball = document.getElementById("ball");
     ball.style.top = "20vw";
-    ball.style.top = "40vw";
+    ball.style.left = "42vw";
 
     let ballObj = {
-        xPos: 20,
-        yPos: 40,
+        xPos: 42,
+        yPos: 20,
         xDir: 1,
         yDir: 1,
         inPlay: true,
@@ -151,34 +151,83 @@ function playBall(ballObj) {
 
     if (ballObj.yPos <= 0) {
         ballObj.yDir = 1;
-    } else if (ballObj.yPos >= 40) {
+    } else if (ballObj.yPos >= 38) {
         ballObj.yDir = -1;
     }
 
     if (ballObj.xPos > 90) {
         ballObj.inPlay = false;
+        ballObj.winner = left;
+    } else if (ballObj.xPos <= 0) {
+        ballObj.inPlay = false;
+        ballObj.winner = right;
     }
 
     let xNewPos = ballObj.xPos + ballObj.xDir;
     let yNewPos = ballObj.yPos + ballObj.yDir;
 
+    if (xNewPos === 83) {
+        let bar = document.getElementById("right-bar");
+        let top = bar.style.top.slice(0, -2);
+        let bottom = Number(top) + 10;
+        // document.getElementById("play-logo").innerHTML = top + " " + bottom + " " + yNewPos;
+        if (yNewPos <= bottom && yNewPos >= top) {
+            // document.getElementById("play-logo").innerHTML = "Change!";
+            ballObj.xDir = -1;
+        }
+    }
+
+    if (xNewPos === 2) {
+        let bar = document.getElementById("left-bar");
+        let top = bar.style.top.slice(0, -2);
+        let bottom = Number(top) + 10;
+        // document.getElementById("play-logo").innerHTML = top + " " + bottom + " " + yNewPos;
+        if (yNewPos <= bottom && yNewPos >= top) {
+            // document.getElementById("play-logo").innerHTML = "Change!";
+            ballObj.xDir = 1;
+        }
+    }
+    
+    // let newPos = bar.style.top.slice(0, -2) - 1.0;
+    // if (newPos < 0) {
+    //     newPos = 0;
+    // }
+    // newPos += "vw";
+
+    ballObj.xPos = xNewPos;
+    ballObj.yPos = yNewPos;
+
     xNewPos += "vw";
     yNewPos += "vw";
 
-    ball.style.top = xNewPos;
+    ball.style.left = xNewPos;
     ball.style.top = yNewPos;
+
+    // document.getElementById("play-logo").innerHTML = "HERE";
 
     return ballObj;
 }
 
-function play() {
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function play() {
     let ballObj = startBall();
-    for (let i = 0; i < 1; i++) {
-        ballObj = playBall(ballObj);
-    }
-    // while (ballObj.inPlay === true) {
+    document.getElementById("play-logo").innerHTML = ballObj.xPos;
+    let i = 0;
+    // for (i = 0; i < 50; i++) {
+    //     await sleep(100);
     //     ballObj = playBall(ballObj);
+    //     document.getElementById("play-logo").innerHTML = i;
     // }
+    while (ballObj.inPlay === true) {
+        ballObj = playBall(ballObj);
+        await sleep(100);
+        ballObj = playBall(ballObj);
+        // document.getElementById("play-logo").innerHTML = ballObj.xPos;
+        i++;
+    }
 }
 
 init();
