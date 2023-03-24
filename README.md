@@ -22,6 +22,7 @@ Simon Project Notes:
 - From HTML: This project is interesting. It is relatively simple. The biggest challenge I think is connecting input and outputs. Other than that, it seems like HTML is a matter of simply knowing which building blocks to use and making a correct use of them.
 - From CSS: I wondered where the heck the different styles were coming from until I followed the link that's put into the 'head' section. I realized that all of the possible formats are defined very compactly in the file. They are then imported like a package. Also, placing the link there allows the rest of the file to call the different fonts, alignments, etc. Finally, I realized that the "class=" section can include multiple components so some features can be shared and others not between elements.
 - From Turning into a service: One of the key things is the idea of nodes. Bascially, there is a single file that acts as connection point between what's going on in the files and the production environment. Express was written to simplify the process.
+- Data base notes: Remember! Don't save username and password in the code! They'll generally stored in /etc/environment, though locally I had to write mine into the .bashrc file (Use the "export VAR=var" command, check using "printenv"). Mongo is the database we're using so that the scores don't have to be stored locally.
 
 Other HTML and CSS Notes:
 - HTML is purely structure. One of the most useful blocks is "div" in my opinion. It's seems very versitile.
