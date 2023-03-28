@@ -24,6 +24,7 @@ Simon Project Notes:
 - From Turning into a service: One of the key things is the idea of nodes. Bascially, there is a single file that acts as connection point between what's going on in the files and the production environment. Express was written to simplify the process.
 - Data base notes: Remember! Don't save username and password in the code! They'll generally stored in /etc/environment, though locally I had to write mine into the .bashrc file (Use the "export VAR=var" command, check using "printenv"). Mongo is the database we're using so that the scores don't have to be stored locally.
 - Login Notes: One thing that's really interesting is the way that the password is hashed before it is entered into the database. Other than that, the auhorization token is also interesting. I'm fairly sure that's used perform functions while logged in.
+- WebSocket Notes: Websocket is used to send messages back and forth. The functions that are key are the on connection function and the on message function. Another important bit is to connect the socket. This is done by calling a new "WebSocket" object which includes the port.
 
 Other HTML and CSS Notes:
 - HTML is purely structure. One of the most useful blocks is "div" in my opinion. It's seems very versitile.
