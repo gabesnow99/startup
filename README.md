@@ -25,6 +25,7 @@ Simon Project Notes:
 - Data base notes: Remember! Don't save username and password in the code! They'll generally stored in /etc/environment, though locally I had to write mine into the .bashrc file (Use the "export VAR=var" command, check using "printenv"). Mongo is the database we're using so that the scores don't have to be stored locally.
 - Login Notes: One thing that's really interesting is the way that the password is hashed before it is entered into the database. Other than that, the auhorization token is also interesting. I'm fairly sure that's used perform functions while logged in.
 - WebSocket Notes: Websocket is used to send messages back and forth. The functions that are key are the on connection function and the on message function. Another important bit is to connect the socket. This is done by calling a new "WebSocket" object which includes the port.
+- React Notes: In essence, react seems like a way to reduce the amount of code required for a project, as well as organize things. So far as I can tell, it does't inherently add any functionality. However, it allows the creation of building blocks, like making something out of legos. React is particularly useful for user interface things.
 
 Other HTML and CSS Notes:
 - HTML is purely structure. One of the most useful blocks is "div" in my opinion. It's seems very versitile.
