@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <title>Pong</title>
+        <link rel="icon" href="favicon.ico">
+        <script src="connection.js"></script>
+    </head>
+
+    <body class="make-it-blue">
+        
+        <header>
+            <div id="logo" class="logo">
+                SUPER PONG
+            </div>
+        </header>
+
+        <div class="second">
+            <div class="second-screen white-noise">
+                <div class="control-group">
+                    <input type="text" class="login-field" value="" placeholder="opponent's username" id="opponent-name">
+                    <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+                <div class="second-form">
+                    <a class="btn btn-primary btn-large btn-block" onclick="connect()">Connect</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
