@@ -14,7 +14,7 @@ function getPlayerMode() {
 }
 
 function getPlayerName() {
-    return localStorage.getItem('username') ?? 'Doc Brown';
+    return localStorage.getItem('userName') ?? 'Doc Brown';
 }
 
 function getOpponent() {
@@ -258,27 +258,42 @@ function display(text) {
     document.getElementById("play-logo").innerHTML = text;
 }
 
+
+// Display messages we receive from our friends
 socket.onmessage = async (event) => {
     const text = await event.data.text();
     const chat = JSON.parse(text);
-    display("Recieved");
-    if (chat.name == getOpponent()) {
-        socketDone = true;
-    }
+    appendMsg('friend', chat.name, chat.msg);
 };
 
 function sendMessage(msg) {
     const name = getPlayerName();
-    display("sent");
     socket.send(`{"name":"${name}", "msg":"${msg}"}`);
 }
 
-async function socketConnect() {
-    let i = 0;
-    while (!socketDone) {
-        sendMessage('ready' + i);
-        i++;
+// Create one long list of messages
+function appendMsg(cls, from, msg) {
+    const chatText = document.querySelector('#chat-text');
+    chatText.innerHTML = `<div><span class="${cls}">${from}</span>: ${msg}</div>` + chatText.innerHTML;
+}
+
+// Send message on enter keystroke
+const input = document.querySelector('#new-msg');
+    input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        sendMessage("Hello there!");
     }
+});
+
+
+
+
+  
+
+async function socketConnect() {
+    // while (!socketDone) {
+    //     sendMessage('ready');
+    // }
 }
 
 async function play() {
