@@ -1,3 +1,7 @@
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+let socketDone = false;
+
 function init() {
     let leftBar = document.getElementById("left-bar");
     let rightBar = document.getElementById("right-bar");
@@ -239,23 +243,54 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function connectToOpponent(opponent) {
+async function connectToOpponent() {
+    const opponent = getOpponent();
+    let announcement = "Connecting to " + opponent;
+    document.getElementById("connection-announcement").innerHTML = announcement;
 
+    await socketConnect();
+    
+    announcement = "Connected to " + opponent;
+    document.getElementById("connection-announcement").innerHTML = announcement;
+}
+
+function display(text) {
+    document.getElementById("play-logo").innerHTML = text;
+}
+
+socket.onmessage = async (event) => {
+    const text = await event.data.text();
+    const chat = JSON.parse(text);
+    display("Recieved");
+    if (chat.name == getOpponent()) {
+        socketDone = true;
+    }
+};
+
+function sendMessage(msg) {
+    const name = getPlayerName();
+    display("sent");
+    socket.send(`{"name":"${name}", "msg":"${msg}"}`);
+}
+
+async function socketConnect() {
+    let i = 0;
+    while (!socketDone) {
+        sendMessage('ready' + i);
+        i++;
+    }
 }
 
 async function play() {
+
     let go = false;
     if (getPlayerMode() != 'online') {
         go = true;
     }
     if (!go) {
-        const opponent = getOpponent();
-        // opponent = getPlayerName();
-        let announcement = "Connecting to " + opponent;
-        document.getElementById("connection-announcement").innerHTML = announcement;
-        await connectToOpponent(opponent);
+        await connectToOpponent();
     }
-    
+
     let ballObj = startBall();
     // document.getElementById("play-logo").innerHTML = ballObj.xPos;
     let i = 0;
