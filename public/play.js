@@ -13,6 +13,10 @@ function getPlayerName() {
     return localStorage.getItem('username') ?? 'Doc Brown';
 }
 
+function getOpponent() {
+    return localStorage.getItem('opponent') ?? 'Gabe';
+}
+
 function addListeners() {
 
     const mode = getPlayerMode();
@@ -235,12 +239,28 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function connectToOpponent(opponent) {
+
+}
+
 async function play() {
+    let go = false;
+    if (getPlayerMode() != 'online') {
+        go = true;
+    }
+    if (!go) {
+        const opponent = getOpponent();
+        // opponent = getPlayerName();
+        let announcement = "Connecting to " + opponent;
+        document.getElementById("connection-announcement").innerHTML = announcement;
+        await connectToOpponent(opponent);
+    }
+    
     let ballObj = startBall();
     // document.getElementById("play-logo").innerHTML = ballObj.xPos;
     let i = 0;
     while (ballObj.inPlay === true) {
-        // ballObj = playBall(ballObj);
+        // ballObj = playBall(ballObj); // Uncomment this when ready.
         await sleep(100);
         ballObj = playBall(ballObj);
         // document.getElementById("play-logo").innerHTML = ballObj.xPos;
