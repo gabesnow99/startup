@@ -35,3 +35,10 @@ JS Notes:
 - It is very important to link the files using script. Sometimes this comes after the HTML code.
 - Things can be saved locally, which is very important for things like scores.
 - Async/Await is acually pretty useful for this project.
+
+Startup Service Notes:
+- Node.js is actually the best. I love it. It allow code to be run and things to be output to the console simply by typing "node ___.js" into the command line.
+- The big thing about turning it to a service is placing the previous files in a "public" folder and add the required lines of code to an index.js file.
+- Mongo is very convenient and simple to use to store data. Passwords are hashed before they are inserted to MongoDB. This way even I can't see the passwords of people. A shame, that.
+- Websocket communication can be a beast, though relatively few lines of code go into it. See example code.
+- Authentication is used, among other things, to check that a person is logged in. It's also used to verify the login.
